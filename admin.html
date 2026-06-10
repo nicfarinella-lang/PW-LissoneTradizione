@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>LissoneTradizione - Area Amministrativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="immagini/logoRistorante.png" alt="Logo">
+    <div class="header-testo">
+        <h1>LissoneTradizione</h1>
+        <p>La tradizione di Lissone nella tua abitazione!</p>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="ordina.html">Ordina</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="admin.html" class="aperto">Area Amministrativa</a>
+</nav>
+
+<main>
+
+    <div class="sezione-titolo">
+        <h2>Ordini Ricevuti</h2>
+        <p>Ciao Nicolò, bevenuto nella sezione amministrativa, ecco l'elenco degli ordini ricevuti con il loro relativo stato di lavorazione.</p>
+        <div class="linea"></div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID Ordine</th>
+                <th>ID Cliente</th>
+                <th>Nome Cliente</th>
+                <th>Indirizzo Consegna</th>
+                <th>ID Piatto</th>
+                <th>Nome Piatto</th>
+                <th>Quantità</th>
+                <th>Totale</th>
+                <th>Stato</th>
+                <th>Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1001</td>
+                <td>5</td>
+                <td><b>Daniela Re</b></td>
+                <td>Via Roma, 12 - Lissone</td>
+                <td>1</td>
+                <td>Risotto con la Luganega</td>
+                <td>2</td>
+                <td>28,00 €</td>
+                <td class="stato-consegna">In consegna</td>
+                <td><button class="btn-aggiorna" onclick="aggiornaStato(this)">Aggiorna</button></td>
+            </tr>
+            <tr>
+                <td>1002</td>
+                <td>8</td>
+                <td><b>Chiara Daccò</b></td>
+                <td>Via Manzoni, 4 - Lissone</td>
+                <td>3</td>
+                <td>Ossobuco alla Lissonese</td>
+                <td>1</td>
+                <td>16,00 €</td>
+                <td class="stato-preparazione">In preparazione</td>
+                <td><button class="btn-aggiorna" onclick="aggiornaStato(this)">Aggiorna</button></td>
+            </tr>
+            <tr>
+                <td>1003</td>
+                <td>12</td>
+                <td><b>Gialissa Bodega</b></td>
+                <td>Via Garibaldi, 7 - Monza</td>
+                <td>2</td>
+                <td>Cassoeula della Tradizione</td>
+                <td>3</td>
+                <td>45,00 €</td>
+                <td class="stato-attesa">In attesa</td>
+                <td><button class="btn-aggiorna" onclick="aggiornaStato(this)">Aggiorna</button></td>
+            </tr>
+            <tr>
+                <td>1004</td>
+                <td>3</td>
+                <td><b>Pietro Vataman</b></td>
+                <td>Via Dante, 20 - Desio</td>
+                <td>4</td>
+                <td>Pan Tramvai Lissonese</td>
+                <td>2</td>
+                <td>12,00 €</td>
+                <td class="stato-attesa">In attesa</td>
+                <td><button class="btn-aggiorna" onclick="aggiornaStato(this)">Aggiorna</button></td>
+            </tr>
+            <tr>
+                <td>1005</td>
+                <td>9</td>
+                <td><b>Alice Fumagalli</b></td>
+                <td>Via Vittorio Veneto, 3 - Seregno</td>
+                <td>1</td>
+                <td>Risotto con la Luganega</td>
+                <td>1</td>
+                <td>14,00 €</td>
+                <td class="stato-preparazione">In preparazione</td>
+                <td><button class="btn-aggiorna" onclick="aggiornaStato(this)">Aggiorna</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function aggiornaStato(button) {
+            const riga = button.closest('tr');
+            const cellaBefore = riga.cells[8];
+            const statoAttuale = cellaBefore.textContent.trim();
+            let nuovoStato, nuovaClasse;
+
+            if (statoAttuale === 'In attesa') {
+                nuovoStato = 'In preparazione';
+                nuovaClasse = 'stato-preparazione';
+            } else if (statoAttuale === 'In preparazione') {
+                nuovoStato = 'Pronto per la consegna';
+                nuovaClasse = 'stato-pronto';
+            } else {
+                nuovoStato = 'In attesa';
+                nuovaClasse = 'stato-in-attesa';
+            }
+
+            cellaBefore.textContent = nuovoStato;
+            cellaBefore.className = nuovaClasse;
+        }
+    </script>
+
+</main>
+
+<footer>
+    <p>LissoneTradizione - Via Don Carlo Colnaghi 1 - 20851 Lissone (MB) - Tel: 039 123456 - lissonetradizione@ecfop.net</p>
+</footer>
+
+</body>
+</html>

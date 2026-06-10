@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    background-color: #F3E5D5;
+    color: #7A4E2D;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #7A4E2D;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+header h1 {
+    color: #F3E5D5;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+header p {
+    color: #F3E5D5;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+nav {
+    background-color: #5E7C5A;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: #F3E5D5;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #FF8C42;
+}
+
+nav a.aperto {
+    background-color: #C46A3C;
+}
+
+.hero {
+    background-image: url('immagini/banner.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(90, 60, 30, 0.6);
+}
+
+.hero-contenuto {
+    position: relative;
+    text-align: center;
+    color: #F3E5D5;
+    padding: 40px 30px;
+}
+
+.hero-contenuto h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-contenuto p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-contenuto a.bottone {
+    background-color: #C46A3C;
+    color: #F3E5D5;
+    padding: 18px 44px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.hero-contenuto a.bottone:hover {
+    background-color: #FF8C42;
+}
+
+
+
+main {
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+.sezione-titolo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sezione-titolo h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #5E7C5A;
+    margin-bottom: 10px;
+}
+
+.sezione-titolo p {
+    color: #000000;
+    font-size: 15px;
+}
+
+.sezione-titolo .linea {
+    width: 50px;
+    height: 3px;
+    background-color: #C46A3C;
+    margin: 15px auto 0;
+}
+
+.chi-siamo {
+    background-color: white;
+    border-left: 4px solid #5E7C5A;
+    padding: 12px 16px;
+    margin: 0 auto 30px;
+    max-width: 800px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #000000;
+}
+
+.separatore {
+    border: none;
+    border-top: 1px solid #d8d0c0;
+    margin: 60px 0;
+}
+
+.menu-griglia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card-piatto {
+    background-color: white;
+    width: 215px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-piatto img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+}
+
+.card-piatto .card-body {
+    padding: 16px;
+}
+
+.card-piatto .id-piatto {
+    font-size: 11px;
+    color: #5E7C5A;
+}
+
+.card-piatto h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #7A4E2D;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.card-piatto .prezzo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #5E7C5A;
+}
+
+.bottone-centrato {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.bottone-verde {
+    background-color: #5E7C5A;
+    color: #F3E5D5;
+    padding: 14px 38px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.bottone-verde:hover {
+    background-color: #4a6347;
+}
+
+.dove-siamo-tutto {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.dove-siamo-via-info {
+    flex: 1;
+    min-width: 220px;
+}
+
+.dove-siamo-via-info p {
+    font-size: 14px;
+    line-height: 2;
+    color: #555;
+}
+
+.dove-siamo-via-info strong {
+    color: #5E7C5A;
+    font-weight: 700;
+}
+
+.dove-siamo-mappa {
+    flex: 2;
+    min-width: 280px;
+}
+
+.dove-siamo-mappa iframe {
+    width: 100%;
+    height: 280px;
+    border: none;
+}
+
+.form-invio-dati {
+    text-align: center;
+    padding: 20px;
+}
+
+.form-invio-dati img {
+    max-width: 100%;
+    width: 600px;
+    border: 1px solid #d8d0c0;
+}
+
+.form-invio-dati p {
+    margin-top: 15px;
+    color: #000000;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.contatti-griglia {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box-contatto {
+    background-color: white;
+    border-top: 3px solid #5E7C5A;
+    padding: 22px;
+    flex: 1;
+    min-width: 180px;
+}
+
+.box-contatto h3 {
+    color: #C46A3C;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.box-contatto p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.admin-banner {
+    background-color: #5E7C5A;
+    color: #F3E5D5;
+    padding: 16px 24px;
+    margin-bottom: 36px;
+    font-size: 13px;
+}
+
+.admin-banner strong {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+table {
+    width: 100%;
+    background-color: ffff;
+    font-size: 13px;
+}
+
+table th {
+    background-color: #7A4E2D;
+    color: #F3E5D5;
+    padding: 13px 12px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+table td {
+    padding: 11px 12px;
+    border-bottom: 1px solid #ede8de;
+    color: #444;
+}
+
+
+.stato-attesa {
+    color: #927749;
+    font-weight: 700;
+}
+
+.stato-preparazione {
+    color: #C46A3C;
+    font-weight: 700;
+}
+
+.stato-consegna {
+    color: #5E7C5A;
+    font-weight: 700;
+}
+
+.stato-pronto {
+    color: #7A4E2D;
+    font-weight: 700;
+}
+
+.btn-aggiorna {
+    background-color: #5E7C5A;
+    color: #F3E5D5;
+    padding: 8px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+}
+
+.btn-aggiorna:hover {
+    background-color: #4a6347;
+}
+
+footer {
+    background-color: #7A4E2D;
+    color: #F3E5D5;
+    text-align: center;
+    padding: 22px;
+    font-size: 12px;
+    margin-top: 80px;
+}
